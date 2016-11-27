@@ -1,7 +1,6 @@
-const initialState = {
-  user: 'Unknown User'
-};
+import {combineReducers} from 'redux';
+import track from './track';
 
-export default function userstate(state = initialState) {
-  return state;
-}
+export default combineReducers({
+  track
+});

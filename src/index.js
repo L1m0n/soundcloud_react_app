@@ -1,6 +1,10 @@
-import React from 'react';
-import {render} from 'react-dom';
+import cofigureStore from './stores/configStore';
 import Stream from './components/Stream';
+import * as actions from './actions';
+import {Provider} from 'react-redux';
+import {render} from 'react-dom';
+import React from 'react';
+
 
 const tracks = [
   {
@@ -11,7 +15,12 @@ const tracks = [
   }
 ];
 
+const store = cofigureStore();
 render(
-  <Stream tracks={tracks} />,
-  document.getElementById('root')
+    <Provider store={store}>
+      <Stream />
+    </Provider>,
+    document.getElementById('root')
 )
+
+store.dispatch(actions.setTracks(tracks));

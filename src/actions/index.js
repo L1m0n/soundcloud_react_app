@@ -1,2 +1,5 @@
-const GET_PHOTO_REQUEST = 'GET_PHOTO_REQUEST'
-const GET_PHOTO_SUCCESS = 'GET_PHOTO_SUCCESS'
+import {setTracks} from './track';
+
+export  {
+    setTracks
+}
