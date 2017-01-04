@@ -1,11 +1,17 @@
 import React from 'react';
 
-const Stream =({tracks = [] })=>{
+const Stream =({tracks = [], onAuth })=>{
 	return (
+
 		<div>
+			<div>
+				<button onClick={onAuth} type="button">
+					Login
+				</button>
+			</div>
 	      {
-	        tracks.map((track) => {
-	          return <div className="track">{track.title}</div>;
+	        tracks.map((track, key) => {
+	          return <div key={key} className="track">{track.title}</div>;
 	        })
 	      }
 	    </div>
