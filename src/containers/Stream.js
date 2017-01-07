@@ -5,16 +5,20 @@ import * as actions from '../actions'
 
 
 const mapStateToProps = (state) => {
- const tracks = state.track;
+ const {tracks, activeTrack} = state.track;
+ const {user} = state.auth;
  return {
-     tracks
+     tracks,
+     user,
+     activeTrack
  }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onAuth: bindActionCreators(actions.auth, dispatch)
+        onAuth: bindActionCreators(actions.auth, dispatch),
+        onPlay: bindActionCreators(actions.playTrack, dispatch)
     }
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Stream);

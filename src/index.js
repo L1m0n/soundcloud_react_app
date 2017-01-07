@@ -4,7 +4,6 @@ import {syncHistoryWithStore} from 'react-router-redux';
 import cofigureStore from './stores/configStore';
 import Callback from './components/Callback';
 import Stream from './containers/Stream';
-import * as actions from './actions';
 import {Provider} from 'react-redux';
 import App from './components/App';
 import {render} from 'react-dom';
@@ -16,14 +15,7 @@ SC.initialize({
     redirect_uri: REDIRECT_URI
 });
 
-const tracks = [
-  {
-    title: 'Some track'
-  },
-  {
-    title: 'Some other track'
-  }
-];
+
 
 const store = cofigureStore();
 const history = syncHistoryWithStore(browserHistory, store);
@@ -41,4 +33,4 @@ render(
     document.getElementById('root')
 );
 
-store.dispatch(actions.setTracks(tracks));
+//store.dispatch(actions.setTracks(tracks));

@@ -1,4 +1,4 @@
-import {React, Component} from 'react';
+import React, { Component} from 'react';
 
 class Callback extends Component {
 
@@ -7,13 +7,8 @@ class Callback extends Component {
     }
 
     render() {
-        return(
-            <div>
-                <p>
-                    This page sould close soon.
-                </p>
-            </div>
-        )
+        return <div><p>This page should close soon.</p></div>;
+
     }
 }
 
